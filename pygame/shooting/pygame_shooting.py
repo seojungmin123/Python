@@ -1,252 +1,58 @@
 import pygame
 import sys
-pygame.init()
 
-white=(255,255,255)
-black=(0,0,0)
-red=(255,0,0)
-yellow=(255,255,0)
+w=480
+h=640
 
-w = 480
-h = 640 
-
-pad=pygame.display.set_mode((w,h))
-pygame.display.set_caption("sdsdad")
-#---------------------------------------이미지 로드 함수 ----------------------------------------#
-
+pad = pygame.display.set_mode((w,h)) #화면 생성
+pygame.display.set_caption("Shooting Game") #제목 설정
+#--------------------이미지로드 함수--------------------
 def img_load(obj):
-    img = pygame.image.load('images/'+str(obj)+'.png')
+    img = pygame.image.load(str(obj)+'.png')
     img_size = img.get_rect().size
     return img, img_size[0], img_size[1]
-#------------------------------------------------------------------------------------------------#
+#------------------------------------------------------
+
+bg= img_load('background') [0]
 
 
+p, pw,ph = img_load('ironman') #전투기이미지
+px = w * 0.4 #전투기의 초기 x위치
+py = h * 0.9 #전투기의 초기 y위치
 
-bg = img_load('bgs')[0]
-pad.blit(bg,(0,0))
-
-
-
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.84,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.74,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.64,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.54,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.44,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.34,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.24,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.14,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.10))
-
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.1))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.2))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.3))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.4))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.5))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.6))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.7))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.8))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.9))
-p, pw, ph =  img_load('faker')
-pad.blit(p,(w*0.04,h*0.10))
+ps=0 #전투기 스피드
 
 
+r, rw, rh=img_load('rock01')
 
-r, rw, rh =  img_load('rock01')
-pad.blit(r,(w*0.42,h*0.1))
-
+pad.blit(bg,(0,0)) #배경화면 그리기
+pad.blit(p,(px,py))
 pygame.display.update()
 
+clock = pygame.time.Clock()
 while True:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             pygame.quit()
             sys.exit()
+
+        if event.type in [pygame.KEYDOWN]:
+            if event.key == pygame.K_LEFT:
+                ps = -5
+            elif event.key == pygame.K_RIGHT:
+                ps = +5
+
+        if event.type in [pygame.KEYUP]:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                ps = 0
+
+    px += ps            #for문 밖에 있음
+    if px <0:
+        px =0
+    elif px >w-pw:
+        px = w-pw
+    pad.blit(bg,(0,0))
+    pad.blit(p, (px,py))
+    pad.blit(r,(200,100))
+    pygame.display.update()
+    clock.tick(60)
