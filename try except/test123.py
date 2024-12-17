@@ -25,7 +25,7 @@ while True: #무한반복문
     break
 '''
 
-str = "89"
+str = "8"
 try:
     score = int(str)
     print(score)
