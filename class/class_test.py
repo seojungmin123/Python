@@ -56,7 +56,7 @@ students = [
     {'name':'유우진','korean':90,'english':89,'math':80},
     {'name':'우유진','korean':20,'english':69,'math':70},
     {'name':'유운지','korean':30,'english':39,'math':60},
-    {'name':'우윤지','korean':10,'english':49,'math':50},
+    {'name':'우윤지','korean':10,'english':21,'math':50},
     {'name':'우이쥰','korean':40,'english':19,'math':40},
     {'name':'진우유','korean':25,'english':29,'math':30}
     ]
