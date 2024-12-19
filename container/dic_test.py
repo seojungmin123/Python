@@ -10,7 +10,7 @@ print(person)
 person['키'] = 180
 print(person)                                                                   
 del person ['나이']
-print(person)
+print(person
 print(person.get('집주소'))
 
 print ('나이' in person)
