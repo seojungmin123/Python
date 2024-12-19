@@ -14,5 +14,5 @@ print(person)
 print(person.get('집주소'))
 
 print ('나이' in person)
-print ('이름' in person)
+print ('이름' in person
 print ('서정민' in person.values())
