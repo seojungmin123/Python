@@ -55,4 +55,4 @@ while True:
     pad.blit(p, (px,py))
     pad.blit(r,(200,100))
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(60
