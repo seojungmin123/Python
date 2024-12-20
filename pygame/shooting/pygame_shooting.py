@@ -29,7 +29,7 @@ pad.blit(bg,(0,0)) #배경화면 그리기
 pad.blit(p,(px,py))
 pygame.display.update()
 
-clock = pygame.time.Clock(
+clock = pygame.time.Clock()
 while True:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
