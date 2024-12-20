@@ -48,4 +48,4 @@ c = Car("스포츠카", 100)
 c.speed_up(10)
 c.move()
 c.speed_down(10)
-c.move(
+c.move()
