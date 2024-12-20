@@ -51,7 +51,7 @@ while True:
         px =0
     elif px >w-pw:
         px = w-pw
-    pad.blit(bg,(0,0)
+    pad.blit(bg,(0,0))
     pad.blit(p, (px,py))
     pad.blit(r,(200,100))
     pygame.display.update()
