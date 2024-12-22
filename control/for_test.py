@@ -1,5 +1,5 @@
 '''
-count = 0
+count = 
 for ch in "서 정 민":
     print(ch, end='')
     count = count + 1
