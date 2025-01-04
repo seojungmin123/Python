@@ -1,4 +1,4 @@
-import py
+import pygame
 import sys
 
 w=480
