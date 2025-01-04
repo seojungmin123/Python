@@ -1,4 +1,4 @@
-import pyg
+import py
 import sys
 
 w=480
