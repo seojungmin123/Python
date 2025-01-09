@@ -1,5 +1,5 @@
 '''
-#클래스와 
+#클래스와 객체
 
 class Monster: #클래스 정의
     def __init__(self,name,age,speed):#생성자
