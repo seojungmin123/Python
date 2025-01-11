@@ -4,7 +4,7 @@ person = {  '이름':'서정민',
             '집주소':'남동구 구월동'}
 
 print(person['이름'])
-print(person
+print(person)
 person['몸무게'] = 60
 print(person)
 person['키'] = 180
