@@ -27,7 +27,7 @@ print(f"두수의 합은 {hap}입니다")
 
 def scoreFunc(scoreList):
 
-    total = sum(scoreList
+    total = sum(scoreList)
     avg = total/len(scoreList)
     max_score = max(scoreList)
     min_score = min(scoreList)
