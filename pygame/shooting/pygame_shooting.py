@@ -1,5 +1,7 @@
 import pygame
 import sys
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 w=480
 h=640
@@ -8,22 +10,19 @@ pad = pygame.display.set_mode((w,h)) #화면 생성
 pygame.display.set_caption("Shooting Game") #제목 설정
 #--------------------이미지로드 함수--------------------
 def img_load(obj):
-    img = pygame.image.load(str(obj)+'.png')
+    img = pygame.image.load('images/' + str(obj) + '.png')
     img_size = img.get_rect().size
     return img, img_size[0], img_size[1]
 #------------------------------------------------------
 
-bg= img_load('background') [0]
-
-
-p, pw,ph = img_load('ironman') #전투기이미지
+bg = img_load('bgs')[0]          # background → bgs
+p, pw, ph = img_load('faker')    # ironman → faker (faker.png 있으니까)
+r, rw, rh = img_load('rock01')   # 이건 그대로
 px = w * 0.4 #전투기의 초기 x위치
 py = h * 0.9 #전투기의 초기 y위치
 
 ps=0 #전투기 스피드
 
-
-r, rw, rh=img_load('rock01')
 
 pad.blit(bg,(0,0)) #배경화면 그리기
 pad.blit(p,(px,py))
